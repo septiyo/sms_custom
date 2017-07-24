@@ -287,21 +287,21 @@ include "../koneksi.php";
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
+                           <!--  <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
-                            </div>
+                            </div> -->
                             <!-- /input-group -->
                         </li>
                         
 						
 			<?php
 			
-			$sql = "SELECT * FROM menu";
+			$sql = "SELECT * FROM menu WHERE PUBLISH = '1'";
 			$hasil = mysqli_query($mysqli, $sql);
 			
 			while($data = mysqli_fetch_assoc($hasil)){
@@ -319,10 +319,10 @@ include "../koneksi.php";
 			
 			?>			
 						
-						 <li>
+						<!--  <li>
                             <a href="index.html"><i class="fa fa-envelope-o fa-fw"></i> Dashboard</a>
                         </li> 
-						
+						 -->
 						
                       <!--   <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -418,13 +418,19 @@ include "../koneksi.php";
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header"></h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+            <?php
+
+            include "isi.php";
+                
+
+            ?>
+                <!-- <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -445,8 +451,8 @@ include "../koneksi.php";
                             </div>
                         </a>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -467,8 +473,8 @@ include "../koneksi.php";
                             </div>
                         </a>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
                             <div class="row">
@@ -489,8 +495,8 @@ include "../koneksi.php";
                             </div>
                         </a>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
                             <div class="row">
@@ -512,9 +518,9 @@ include "../koneksi.php";
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- /.row -->
-            <div class="row">
+           <!--  <div class="row">
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -539,13 +545,13 @@ include "../koneksi.php";
                                 </div>
                             </div>
                         </div>
-                        <!-- /.panel-heading -->
+                        
                         <div class="panel-body">
                             <div id="morris-area-chart"></div>
                         </div>
-                        <!-- /.panel-body -->
+                        
                     </div>
-                    <!-- /.panel -->
+                    
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
@@ -569,7 +575,7 @@ include "../koneksi.php";
                                 </div>
                             </div>
                         </div>
-                        <!-- /.panel-heading -->
+                        
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-4">
@@ -635,24 +641,24 @@ include "../koneksi.php";
                                             </tbody>
                                         </table>
                                     </div>
-                                    <!-- /.table-responsive -->
+                                    
                                 </div>
-                                <!-- /.col-lg-4 (nested) -->
+                                
                                 <div class="col-lg-8">
                                     <div id="morris-bar-chart"></div>
                                 </div>
-                                <!-- /.col-lg-8 (nested) -->
+                                
                             </div>
-                            <!-- /.row -->
+                            
                         </div>
-                        <!-- /.panel-body -->
+                        
                     </div>
-                    <!-- /.panel -->
+                    
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
                         </div>
-                        <!-- /.panel-heading -->
+                       
                         <div class="panel-body">
                             <ul class="timeline">
                                 <li>
@@ -757,17 +763,17 @@ include "../koneksi.php";
                                 </li>
                             </ul>
                         </div>
-                        <!-- /.panel-body -->
+                        
                     </div>
-                    <!-- /.panel -->
+                    
                 </div>
-                <!-- /.col-lg-8 -->
+                
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-bell fa-fw"></i> Notifications Panel
                         </div>
-                        <!-- /.panel-heading -->
+                        
                         <div class="panel-body">
                             <div class="list-group">
                                 <a href="#" class="list-group-item">
@@ -816,12 +822,12 @@ include "../koneksi.php";
                                     </span>
                                 </a>
                             </div>
-                            <!-- /.list-group -->
+                            
                             <a href="#" class="btn btn-default btn-block">View All Alerts</a>
                         </div>
-                        <!-- /.panel-body -->
+                        
                     </div>
-                    <!-- /.panel -->
+                    
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example
@@ -830,9 +836,9 @@ include "../koneksi.php";
                             <div id="morris-donut-chart"></div>
                             <a href="#" class="btn btn-default btn-block">View Details</a>
                         </div>
-                        <!-- /.panel-body -->
+                        
                     </div>
-                    <!-- /.panel -->
+                    
                     <div class="chat-panel panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-comments fa-fw"></i> Chat
@@ -870,7 +876,7 @@ include "../koneksi.php";
                                 </ul>
                             </div>
                         </div>
-                        <!-- /.panel-heading -->
+                        
                         <div class="panel-body">
                             <ul class="chat">
                                 <li class="left clearfix">
@@ -936,7 +942,7 @@ include "../koneksi.php";
                                 </li>
                             </ul>
                         </div>
-                        <!-- /.panel-body -->
+                        
                         <div class="panel-footer">
                             <div class="input-group">
                                 <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
@@ -952,7 +958,7 @@ include "../koneksi.php";
                     <!-- /.panel .chat-panel -->
                 </div>
                 <!-- /.col-lg-4 -->
-            </div>
+            </div> -->
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
